@@ -39,15 +39,6 @@ In this project I developed my own implementation of the string.h library in the
 | 14 | char *strstr(const char *haystack, const char *needle) | Finds the first occurrence of the entire string needle (not including the terminating null character) which appears in the string haystack. |
 | 15 | char *strtok(char *str, const char *delim) | Breaks string str into a series of tokens separated by delim. |
 
-### sprintf and sscanf
-
-- int sscanf(const char *str, const char *format, ...) - reads formatted input from a string;
-- int sprintf(char *str, const char *format, ...) - sends formatted output to a string pointed to, by str.
-
-where:
-- str − This is the C string that the function processes as its source to retrieve the data;
-- format − This is the C string that contains one or more of the following items: Whitespace character, Non-whitespace character and Format specifiers. A format specifier for print functions follows this prototype: %[flags][width][.precision][length]specifier. A format specifier for scan functions follows this prototype: %[*][width][length]specifier.
-
 ### sprintf And sscanf Specifiers
 
 | No. | Specifier | sprintf output | sscanf output |
@@ -110,4 +101,47 @@ where:
 | 3 | void *insert(const char *src, const char *str, size_t start_index) | Returns a new string in which a specified string (str) is inserted at a specified index position (start_index) in the given string (src). In case of any error, return NULL. |
 | 4 | void *trim(const char *src, const char *trim_chars) | Returns a new string in which all leading and trailing occurrences of a set of specified characters (trim_chars) from the given string (src) are removed. In case of any error, return NULL. |
 
+## Part 1. Implementation of the string.h library functions
 
+It was necessary to implement the described above functions of the string.h library: 
+ - The library must be developed in C language of C11 standard using gcc compiler;
+ - The library's code, including headers, makefile and library itself must be located in the src folder;    
+ - When writing code it is necessary to follow the Google style;
+ - Make it as a static library named *s21_string.a* (with the header file s21_string.h);
+ - The library must be developed in accordance with the principles of structured programming, duplication in the code must be avoided;
+ - Prepare a full coverage of the library's functions by unit-tests using the Check library;
+ - Test's code and the executable file must be located in the src folder;
+
+## Part 2. Partial implementation of the sprintf function
+
+It was necessary to implement the sprintf function from the stdio.h library:
+- The function must be placed in the s21_string.h library;
+- All of the requirements outlined above are applied to function implementation;
+- The next partial formatting must be supported:
+  - Specifiers: c, d, f, s, u, %
+  - Flags: -, +, (space)
+  - Width description: (number)
+  - Precision description: .(number)
+  - Length description: h, l
+
+## Part 3. Implementation of some format modifiers of the sprintf function
+
+It was necessary to implement some format modifiers of the sprintf function from the stdio.h library:
+- The next additional format modifiers must be supported:
+  - Specifiers: g, G, e, E, x, X, o, p
+  - Flags: #, 0
+  - Width description: *
+  - Precision description: .*
+  - Length description: L
+
+## Part 4. Implementation of the sscanf function
+
+It was necessary to implement the sscanf function from the stdio.h library:
+- All of the requirements outlined above are applied to function implementation;
+- Full formatting (including flags, widths, precision, modifiers and conversion types) must be supported.
+
+
+## Part 5. Implementation of special string processing functions
+
+It was necessary to implement some string processing functions from the String class:
+- All of the requirements outlined above are applied to functions implementation;
